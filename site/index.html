@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Coursera is cool</title>
 	<style type="text/css">
 		
@@ -12,10 +13,15 @@
 		}
 
 		body {
-			font-family: arial;
-			margin: 40px 150px;
+			font-family: Arial, sans-serif;
 			line-height: 1.5;
+			margin: 40px 150px;
 		}
+
+		p {
+			margin-bottom: 15px;
+		}
+
 		table {
 			border-collapse: collapse; /*Убирает отсутпы между ячейками таблицы*/
 		}
@@ -106,6 +112,113 @@
 			top: 0;
 			left: 0;
 		}
+
+		/*Responsive Layout Example*/
+		p.resp {
+			border: 1px solid black;
+  		background-color: #A52A2A;
+  		width: 90%;
+ 		 	height: 150px;
+  		margin-right: auto;
+  		margin-left: auto;
+  		color: white;
+  		padding: 10px;
+		}
+
+		/* Simple Responsive Framework. */
+		.row {
+  		width: 100%;
+		}
+
+		/********** Large devices only **********/
+		/*Здесь я прописываю все значения для всех типов колонок, чтобы в будующем просто вписывать название класса и не запариваться со стилями*/
+	@media (min-width: 1200px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+    border: 1px solid green;
+  }
+  .col-lg-1 {
+    width: 8.33%;
+  }
+  .col-lg-2 {
+    width: 16.66%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33%;
+  }
+  .col-lg-5 {
+    width: 41.66%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33%;
+  }
+  .col-lg-8 {
+    width: 66.66%;
+  }
+  .col-lg-9 {
+    width: 74.99%;
+  }
+  .col-lg-10 {
+    width: 83.33%;
+  }
+  .col-lg-11 {
+    width: 91.66%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 950px) and (max-width: 1199px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+    border: 1px solid green;
+  }
+  .col-md-1 {
+    width: 8.33%;
+  }
+  .col-md-2 {
+    width: 16.66%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.33%;
+  }
+  .col-md-5 {
+    width: 41.66%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.33%;
+  }
+  .col-md-8 {
+    width: 66.66%;
+  }
+  .col-md-9 {
+    width: 74.99%;
+  }
+  .col-md-10 {
+    width: 83.33%;
+  }
+  .col-md-11 {
+    width: 91.66%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
 	</style>
 </head>
 <body>
@@ -450,5 +563,100 @@ section { clear: left; }</p>
 	<p class="rel abs three"></p>
 	<p class="rel four"></p>
 </div>
-<p>Какой-то новый код для теста GitHub</p>
+
+<h2>Media Queries – Медиа запросы</h2>
+<p>Позволяют группировать стили вместе и таргетировать их на устройства на основе некоторых критериев. Например, <b>по ширине, высоте или ориентации (ландскейп или портрет).</b></p>
+<h3>Media Query Syntax</h3>
+
+<p>@media (max-width: 767px) { <br>
+	p { <br>
+		color: blue; <br>
+	} <br>
+} <br>
+</p>
+
+<p><b>(max-width: 767px)</b> – Media Feature (resolves to true or false). Если true, стиль применится. Если false – нет.</p>
+<p><b>Можно объединить несколько функций мультимедиа (media features) с помощью логических операторов.</b></p>
+
+<h3>Media Query Common Features</h3>
+<p>@media (max-width: 800px) {...} <br>
+@media (min-width: 800px) {...} <br>
+@media (orientation: portrait) {...} <br>
+@media (screen) {...} <br>
+@media (print) {...} <br>
+</p>
+<p>Наиболее распространенным способом таргетинка на разные устройства является <b>их ширина</b>.</p>
+
+<h3>Medai Query Common Logical Operations</h3>
+<p>Объединение с помощью логических операторов:</p>
+
+<h4>Devices with width within a range</h4>
+<p>@media (min-width: 768px) and (max-width: 991px) {...}</p>
+
+<h4>Comma is equivalent to OR</h4>
+<p>@media (max-width: 767px), (min-width: 998px) {...}</p>
+<p>Таргет на любые устройства меньше 767px или больше 998px.</p>
+
+<h4>Comma is equivalent to OR</h4>
+<p>@media (max-width: 767px), (min-width: 998px) {...}</p>
+
+<h3>Media Query Common Approach</h3>
+<p><ol>
+	<li>Сначала начать с базовых стилей, которые будут применены ко всем экранам/ориенациям и т.д.</li>
+	<li>Затем начать нацеливаться на определенный размер экрана, либо изменяя некоторые свойства базовых стилей, либо добавляя что-то еще к ним, либо что-то отнимая</li>
+	<li>Границы диапазона не должны перекрываться: если я в одном @media использую ограничение 1200px, то в другом это дожно быть 1199px или 1201px, в противном случае оба набора стилей будут применены и все будет очень грязным</li>
+</ol></p> <br>
+<p>Брать диапазоны размеров для широких, средних и прочих экранов можно из <b>стандартных диапазонов, которые структура Twitter Bootstrap определяет для своих различных media device sizes</b>.</p><br>
+
+<p>В окне просмотра кода в Google Chrome, можно показать Medai Queries. Для этого надо активировать <b>Toggle Device Toolbar, нажать на три вертикальных точки и выбрать Show Media Queries</b>.</p><br>
+<p>Точки разрыва между разными диапазонами Media Queries называются <b>Break Points</b>.</p>
+
+<h2>Responsive Design</h2>
+<p>Это дизайн, предназначенный для адаптации своего лэйаута к среде просмотра, используя <b>fluid, proportion-based grids (ширина должна быть указана в %), flexible imges и CSS3 media queries.</b></p>
+<p>Контент должен адаптироваться под ширину экрана (чаще всего), при этом <b>многословность контента или его visual delivery могут измениться</b>. Например, номер телефона, который в декстопной версии не привлекал к себе особого внимания и находился где-то в углу, в мобильной версии является центральным элементом и он самый заметный.</p>
+<p><b>Некоторые части сайта могут быть скрыты в мобильной версии вообще.</b></p>
+
+<h3>Alternative to Responsive Design:</h3>
+<p>Можно иметь сервер высокой технологии, который обнаруживает User-Agent (тип браузера, который используется) и с помощью этого выяснять, находится человек на мобильном или декстопном устройстве, а затем на основе этой инфы либо обслуживать обычную декстопную версию (www.site.com), либо предоставить клиенту мобильную версию сайта (m.site.com).</p>
+<h4>Проблемы такого подхода:</h4>
+<p>1. Высокий риск перенаправления функций между приложениями, потому что технически это два разных приложения, работающих на моем сайте. <br> 2. Мобильные устройства слишком разнообразны между собой. Поэтому трудно сделать мобильный сайт, который удовлетворит каждого клиента. Поэтому часто приходится жертвовать UX, чтобы создать один мобильный сайт, который подходит всем.</p>
+
+<h3>12-Column Gird Responsive Layout</h3>
+<p>Самый распространенный layout – это 12-колонный сетчатый макет. <b>Его использует Twitter Bootstrap и почти каждый другой отзывчивый фреймворк</b>.</p>
+<p>Он используется из-за <b>factors of 12: 1, 2, 3, 4, 6, 12</b>. Число 12 на это все красиво делится. Это означает, что<b> можно разделить страницу на разделы, которые равномерно разбиты и красиво layout themselves</b>.</p>
+<p>Например, можно иметь контент, который 4 раза делится на 3 столбца. Либо поделить макет на 6 + 6. Или 4 + 4 + 4. <br> Комбинация также может быть асиметричная: 8 + 4 или 9 + 3 и так далее.</p>
+<p>Таким образом, если ширина браузера  100%, значит <b>1 column (столбец) = 100% / 12 = 8.33%</b>.</p>
+
+<h4>Как делится все остальное:</h4>
+<p>3 + 3 + 3 + 3 = по 25% <br>
+6 + 6 = по 50% <br>
+4 + 4 + 4 = по 33.33% <br>
+и так далее</p>
+
+<h4>Nested Grids (Вложенные сетки)</h4>
+<img src="nested-grids.png">
+<p>Если у нас есть 4 + 4 + 4, каждый из них <b>можно рассмотреть как 100% и вложить в них другие комбинации:</b> 6+6, 3+3+3+3, 4+4+4 и так далее.</p> <br>
+
+<p>Чтобы центрировать что-то внутри block-element'a div, можно использовать этот трюк: <br>
+margin-right: auto;<br>
+margin-left: autro;</p>
+
+<h3>Responsive Layout Example</h3>
+<p>Это отображается не не весь экран, потому что у тега body есть margin</p>
+<div class="row">
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 1</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 2</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 3</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 4</p></div>
+
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 5</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 6</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 7</p></div>
+  <div class="col-lg-3 col-md-6"><p class="resp">Item 8</p></div>
+</div>
+
+<h3>Мобильные версии</h3>
+<p>По умолчанию мобильные версии <b>пытаются уменьшить (zoom out) все содержимое сайта со 100% до 40% (например)</b>, если им не говорят делать что-то другое. Поэтому они могут попытаться вписать весь контент в окно просмотра телефона.</p>
+<p>Чтобы сказать мобильному браузеру, что это на самом деле отзывчивый дизайн, и не нужно пытаться zoom out его масштаб, просто оставайся на регулярном уровне масштабирования, надо указать специальный метатег в head: <br>
+<b> < meta name="viewport" content="width=device-width, initial-scale=1" ></b></p>
 </html>
